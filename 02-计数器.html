@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计数器</title>
+    <style>
+        #count-num {
+            display: flex;
+            justify-content: space-between;
+            margin: 200px auto;
+            width: 150px;
+            height: 40px;
+            background-color: aqua;
+        }
+
+        button {
+            width: 40px;
+            height: 40px;
+        }
+
+        span {
+            display: block;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="count-num">
+            <!-- v-on:click = '' -->
+            <!-- 给元素绑定事件 用@方法名='事件名' -->
+            <button @click="sub">-</button>
+            <span>{{num}}</span>
+            <button @click="add">+</button>
+        </div>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script>
+        let vue = new Vue({
+            el: '#app',
+            data: {
+                // 注意data对象中的属性都是键值对定义的
+                num: 1
+            },
+            methods: {
+                add: function () {
+                    if (this.num < 10) {
+                        // 点击加1
+                        this.num++;
+                    } else {
+                        alert('不能再加啦');
+                    }
+                },
+                sub: function () {
+                    if (this.num > 0) {
+                        // 点击-1
+                        this.num--;
+                    }else{
+                       return;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

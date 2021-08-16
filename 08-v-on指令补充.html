@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on指令补充</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-on 添加自定义参数 -->
+       <input type="button"  value="点我呀"  @click ="sayhi(666,'你好呀')">
+       <!-- .修饰符 可以对事件进行限制  .enter表示回车事件-->
+       <input type="text" @keyup.enter = "doit">
+    </div>
+     <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+     
+     <script>
+         let app = new Vue({
+             el:'#app',
+             methods:{
+                 sayhi:function(p1,p2){
+                     alert('hello');
+                     console.log(p1);
+                     console.log(p2);
+                 },
+                 doit:function(){
+                     alert('just do it');
+                 }
+             },
+         });
+     </script>
+
+</body>
+</html>

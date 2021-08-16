@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="button" id="get" value="get请求">
+        <input type="button" id="post" value="post请求">
+
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- https://autumnfish.cn/api/joke/list?num=3 -->
+    <script>
+        document.querySelector('#get').onclick = function () {
+            axios.get('https://autumnfish.cn/api/joke/list?num=3').
+            then(function (response) { 
+                console.log(response); 
+            });
+        };
+        document.querySelector('#post').onclick = function () {
+            axios.post('https://autumnfish.cn/api/user/reg',{username:"西蓝花炒蛋"}).
+            then(function (response) { 
+                console.log(response); 
+            });
+        };
+    </script>
+</body>
+
+</html>

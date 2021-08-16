@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-model 获取修改表单数据 -->
+        <input type="text" v-model = 'message'>
+        <h3>{{message}}</h3>
+        <button @click ='getM'>获取表单数据</button>
+        <button @click ='setM'>修改表单数据</button>
+
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+
+    <script>
+        let app = new Vue({
+            el:'#app',
+            data:{
+                message:'加油鸭'
+            },
+            methods:{
+                getM:function(){
+                    alert(this.message);
+                },
+                setM:function(){
+                    this.message = '冲鸭！！'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

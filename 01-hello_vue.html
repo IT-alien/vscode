@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue的基本使用</title>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+        <p>{{cat.name}}</p>
+        <ul>
+            <li>{{eat[0]}}</li>
+            <li>{{eat[1]}}</li>
+        </ul>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script>
+        // 创建vue实例对象
+        let vue = new Vue({
+            // el挂载实例  对挂载范围内的有作用
+            el:'#app',
+            // data数据对象
+            data:{
+                message:'hello vue',
+                cat:{
+                    name:"linda",
+                    age:22,
+                },
+                eat:['apple','ect'],
+                
+            }
+        });
+    </script>
+</body>
+</html>

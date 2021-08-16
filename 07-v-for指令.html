@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for指令</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-for 指令是响应式的  -->
+        <button @click ='add'>添加元素</button>
+        <button @click = 'del'>删除元素</button>
+
+        <ul>
+            <!-- v-for 循环遍历数组 item数组元素 index数组索引 -->
+            <li v-for = '(item,index) in arr'>
+                {{index}}{{item}}
+            </li>
+        </ul>
+        <!-- v-for 循环遍历对象 item元素 -->
+        <h3 v-for='item in cat'>{{item.name}}</h3>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script>
+        let app = new Vue({
+            el:'#app',
+            data:{
+                arr:[1,2,3,4,5],
+                cat:[{name:'小黑'}],
+            },
+            methods:{
+                add:function(){
+                    this.arr.push('小白');
+                },
+                del:function(){
+                    this.arr.shift();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

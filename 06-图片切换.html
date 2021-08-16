@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片切换</title>
+    <style>
+        #app {
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <button @click="pre" >&lt;</button>
+        <!-- 通过数组取出元素 下标 -->
+        <img :src ="url[index]">
+        <button @click="next">&gt;</button>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el:'#app',
+            data:{
+                url:[
+                "./images/01.png",
+                "./images/02.png",
+                "./images/03.png",
+                "./images/04.png",
+                ],
+                index:0
+            },
+            methods:{
+                pre:function(){
+                    this.index--;
+                },
+                next:function(){
+                    this.index++;
+                }
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div id="app">
+        <button @click = "prev" v-show = "index>0">&lt;</button>
+        <img :src="url[index]" >
+        <button @click = 'next' v-show = "!(index>=url.length-1)">&gt;</button>
+    </div> -->
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+
+    <!-- <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                // 利用数组存放多组数据
+                url: [
+                    "./images/01.png",
+                    "./images/02.png",
+                    "./images/03.png",
+                    "./images/04.png",
+                    "./images/05.png",
+                    "./images/06.png",
+                ],
+                // 记录索引 查找数组元素
+                index:0
+            },
+            methods: {
+                prev:function(){
+                    this.index--;
+                },
+                next:function(){
+                    this.index++;
+                }
+            }
+        });
+    </script> -->
+</body>
+
+</html>
